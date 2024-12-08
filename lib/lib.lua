@@ -61,12 +61,6 @@ local recipe_base = {
     type = "recipe",
     category = "crafting",
     energy_required = 1,
-    ingredients =
-    {
-        {"steel-plate", 1},
-    },
-    result = "ei_1x1-container",
-    result_count = 1,
     enabled = false,
     always_show_made_in = true,
     main_product = "ei_1x1-container",
@@ -188,7 +182,7 @@ function ei_containers_lib.make_recipe(size, typus, ingredients, time)
     recipe.ingredients = ingredients
     recipe.energy_required = time
 
-    recipe.result = fullname
+    recipe.results = {{type="item", name=fullname, amount=1}}
     recipe.main_product = fullname
     
     data:extend({recipe})
